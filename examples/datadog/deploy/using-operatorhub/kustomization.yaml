@@ -1,4 +1,4 @@
 resources:
   - subscription.yaml
   #- operator-group.yaml
-  - ../agent.yaml
+  #- ../agent.yaml

@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/git-branch: master
-    apps.open-cluster-management.io/git-path: examples/datadog/using-operatorhub
+    apps.open-cluster-management.io/git-path: examples/datadog/deploy/using-operatorhub
     apps.open-cluster-management.io/reconcile-option: merge
   labels:
     app: datadog
