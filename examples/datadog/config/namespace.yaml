@@ -1,0 +1,9 @@
+apiVersion: v1                    
+kind: Namespace
+metadata:
+  name: datadog-operator
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ggithubcom-pnminh-acm-notes-ns
