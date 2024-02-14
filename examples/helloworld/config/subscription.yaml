@@ -1,0 +1,10 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: hello-world-subscription
+  namespace: your-namespace
+spec:
+  channel: your-namespace/hello-world-channel
+  placement:
+    placementRef:
+      name: hello-world-placement

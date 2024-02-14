@@ -1,0 +1,16 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world
+spec:
+  to:
+    kind: Service
+    name: hello-world
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: ''
+    destinationCACertificate: ''
+  port:
+    targetPort: 8080
