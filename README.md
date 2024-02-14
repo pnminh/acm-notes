@@ -14,6 +14,10 @@
 ### ROSA
 ![](assets/2024-02-14-11-12-34.png)
 - Run command against target ROSA cluster
+## Application model
+![](assets/2024-02-14-13-37-52.png)
+## References
+https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.5/html/applications/managing-applications
 ## Todo
 - Where to find base domain
 - ROSA Resources created with Terraform
