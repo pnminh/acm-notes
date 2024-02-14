@@ -1,9 +1,27 @@
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
 metadata:
-  name: hello-world-placement
-  namespace: your-namespace
+  labels:
+    app: hello-world
+  name: hello-world-placement-1
+  namespace: hello-world
 spec:
-  clusterConditions:
-  - status: "True"
-    type: ManagedClusterConditionAvailable
+  predicates:
+    - requiredClusterSelector:
+        labelSelector:
+          matchExpressions:
+            - key: 'environment'
+              operator: 'In'
+              values: 
+                - 'qa'
+  clusterSets:
+    - default
+
+---
+apiVersion: cluster.open-cluster-management.io/v1beta2
+kind: ManagedClusterSetBinding
+metadata:
+  namespace: hello-world
+  name: default
+spec:
+  clusterSet: default
