@@ -4,7 +4,7 @@ metadata:
   labels:
     app: datadog
   name: datadog-placement-1
-  namespace: datadog-operator
+  namespace: openshift-operators
 spec:
   predicates:
     - requiredClusterSelector:
@@ -21,7 +21,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta2
 kind: ManagedClusterSetBinding
 metadata:
-  namespace: datadog-operator
+  namespace: openshift-operators
   name: default
 spec:
   clusterSet: default

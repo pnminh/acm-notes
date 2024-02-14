@@ -1,4 +1,4 @@
-apiVersion: datadoghq.com/v2alpha1
+apiVersion: datadoghq.com/v2alpha1 #datadog-secret already created on openshift-operators ns
 kind: DatadogAgent
 metadata:
   name: datadog

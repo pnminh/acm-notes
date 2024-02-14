@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: datadog-operator
+  namespace: openshift-operators
+spec:
+  targetNamespaces:
+  - datadog-operator
