@@ -5,6 +5,12 @@ metadata:
 spec:
   egress:
   - to:
+      cidrSelector: 10.0.0.0/16 ## whitelist DNS server. ToDo limit the range
+    type: Allow
+  - to:
+      dnsName: discoverfinancial.com
+    type: Allow
+  - to:
       dnsName: www.discoverfinancial.com
     type: Allow
   - to:
@@ -12,4 +18,4 @@ spec:
     type: Allow
   - to: 
       cidrSelector: 0.0.0.0/0
-    type: Deny
+    type: 
