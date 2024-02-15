@@ -1,4 +1,5 @@
 resources:
+  - network-policies
   - ../../base/deploy
 patches:
   - target:
