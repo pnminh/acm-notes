@@ -3,8 +3,8 @@ kind: Channel
 metadata:
   annotations:
     apps.open-cluster-management.io/reconcile-rate: medium
-  name: ggithubcom-pnminh-acm-notes
-  namespace: ggithubcom-pnminh-acm-notes-ns
+  name: github-acm-notes
+  namespace: acm-channels
 spec:
   type: Git
   pathname: 'https://github.com/pnminh/acm-notes'

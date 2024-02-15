@@ -1,4 +1,5 @@
 resources:
+  - network-policies
   - service.yaml
   - deployment.yaml
   - route.yaml

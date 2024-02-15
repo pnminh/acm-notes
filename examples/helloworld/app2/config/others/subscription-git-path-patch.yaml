@@ -1,0 +1,3 @@
+- op: replace
+  path: /metadata/annotations/apps.open-cluster-management.io~1git-path
+  value: examples/helloworld/app2/deploy

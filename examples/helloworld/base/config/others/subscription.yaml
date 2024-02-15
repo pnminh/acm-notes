@@ -3,14 +3,14 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/git-branch: master
-    apps.open-cluster-management.io/git-path: examples/helloworld/app
+    apps.open-cluster-management.io/git-path: examples/helloworld/base/deploy
     apps.open-cluster-management.io/reconcile-option: merge
   labels:
     app: hello-world
-  name: hello-world-subscription-1
-  namespace: hello-world
+  name: hello-world-subscription-1  
+  namespace: hello-world  
 spec:
-  channel: ggithubcom-pnminh-acm-notes-ns/ggithubcom-pnminh-acm-notes
+  channel: acm-channels/github-acm-notes  
   placement:
     placementRef:
       kind: Placement

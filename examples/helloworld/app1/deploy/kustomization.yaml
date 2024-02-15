@@ -1,0 +1,9 @@
+resources:
+  - ../../base/deploy
+patches:
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: NetworkPolicy
+      name: deny-all-egress
+    path: egress-block-all-namespace-patch.yaml

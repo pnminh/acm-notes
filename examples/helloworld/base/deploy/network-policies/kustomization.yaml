@@ -1,0 +1,4 @@
+resources:
+  - egress-firewall-default.yaml
+  - ingress-block-all.yaml
+  - egress-block-all-except-same-namespace.yaml
