@@ -13,7 +13,7 @@ spec:
             - key: 'environment'
               operator: 'In'
               values: 
-                - 'qa'
+                - 'prod'
   clusterSets:
     - default
 
