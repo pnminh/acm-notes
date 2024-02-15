@@ -5,6 +5,7 @@ metadata:
   namespace: openshift-operators # same namespace as where the Datadog Operator was deployed
 spec:
   global:
+    site: us5.datadoghq.com
     credentials:
       apiSecret:
         keyName: api-key
