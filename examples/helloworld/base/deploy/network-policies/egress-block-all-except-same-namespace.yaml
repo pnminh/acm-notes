@@ -8,4 +8,7 @@ spec:
   policyTypes:
   - Egress
   egress:
-  - {}
+  - to: #allow
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: NAMESPACE
