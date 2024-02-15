@@ -9,3 +9,4 @@ spec:
   name: datadog-operator-certified
   source: certified-operators
   sourceNamespace: openshift-marketplace
+  webhookEnabled: true

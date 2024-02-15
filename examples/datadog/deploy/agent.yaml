@@ -1,10 +1,36 @@
-apiVersion: datadoghq.com/v2alpha1 #datadog-secret already created on openshift-operators ns
+apiVersion: datadoghq.com/v2alpha1
 kind: DatadogAgent
 metadata:
   name: datadog
+  namespace: openshift-operators # same namespace as where the Datadog Operator was deployed
 spec:
   global:
     credentials:
       apiSecret:
-        secretName: datadog-secret
         keyName: api-key
+        secretName: datadog-secret
+    criSocketPath: /var/run/crio/crio.sock
+    kubelet:
+      # This is needed if the kubelet certificate is self-signed.
+      # Alternatively, the CA certificate used to sign the kubelet certificate can be mounted.
+      tlsVerify: false
+  override:
+    nodeAgent:
+      # In OpenShift 4.0+, set the hostNetwork parameter to allow access to your cloud provider metadata API endpoint.
+      # This is necessary to retrieve host tags and aliases collected by Datadog cloud provider integrations. 
+      hostNetwork: true
+      securityContext:
+        runAsUser: 0
+        seLinuxOptions:
+          level: s0
+          role: system_r
+          type: spc_t
+          user: system_u
+      serviceAccountName: datadog-agent-scc
+    clusterAgent:
+      serviceAccountName: datadog-agent-scc
+      replicas: 2
+      containers:
+        cluster-agent:
+          securityContext:
+            readOnlyRootFilesystem: false
