@@ -1,0 +1,32 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: network-policy-creator
+rules:
+  - verbs:
+      - create
+      - list
+      - get
+      - deletecollection
+      - watch
+    apiGroups:
+      - networking.k8s.io
+    resources:
+      - networkpolicies
+  - verbs:
+      - patch
+      - update
+      - delete
+    apiGroups:
+      - networking.k8s.io
+    resources:
+      - networkpolicies
+    resourceNames:
+      - app-policy-1
+      - app-policy-2
+      - app-policy-3
+      - app-policy-4
+      - app-policy-5
+      - app-policy-6
+      - app-policy-7
+      - app-policy-8

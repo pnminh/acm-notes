@@ -8,10 +8,13 @@ spec:
       cidrSelector: 10.0.0.0/16 ## whitelist DNS server. ToDo limit the range
     type: Allow
   - to:
-      dnsName: discover.com
+      dnsName: amazonaws.com
     type: Allow
   - to:
-      dnsName: www.discover.com
+      dnsName: www.amazonaws.com
+    type: Allow
+  - to:
+      dnsName: redhat.com
     type: Allow
   - to:
       dnsName: www.redhat.com
