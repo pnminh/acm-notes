@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/egress/0/to/0/namespaceSelector/matchLabels/kubernetes.io~1metadata.name
-  value: app1

@@ -1,2 +1,3 @@
 resources:
   - allow-from-app1.yaml
+  - allow-other-access.yaml

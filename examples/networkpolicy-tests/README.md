@@ -1,11 +1,13 @@
 # Network policies
-## Scenario
-## Prerequisites
-- Egress policies required for 
-1. App can talk to 
-1. App1 can talk to app2, but not vice versa
-2. App1 not able to access any addresses not listed in Egress network policies, even they are listed in Egress Firewall
-3. App2 has allow-all network policies
-
+## Scenarios
+1. `app1` can curl to app in same namespace and in `app2` namespace
+2. `app2` can curl to app in same namespace but not in `app1` namespace
+3. `app2` can curl domains whitelisted by both egress policy and egress firewall
+4. `app1` cannot curl domains whitelisted by Egress Firewall since they are not whitelisted in Egress Network Policies
+5. `app2` cannot curl domains whitelisted by egress policies as there are Deny rules in Egress Firewall
+   - By commenting out a rule for domain name, e.g. redhat.com, and do the curl to redhat.com both before and after
+6. `user1` can only edit/delete policy names that are whitelisted
 ## Limitations
+- Only 1 Egress Firewall resource can be set at one time
 - Network Policies require explicit `Allow`, thus all `Allow` rules in `Egress Firewall` need to be there in `Egress Network Policies`
+- Network Policies do not support domain names
