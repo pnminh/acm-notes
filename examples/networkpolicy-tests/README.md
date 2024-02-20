@@ -7,6 +7,8 @@
 5. `app2` cannot curl domains whitelisted by egress policies as there are Deny rules in Egress Firewall
    - By commenting out a rule for domain name, e.g. redhat.com, and do the curl to redhat.com both before and after
 6. `user1` can only edit/delete policy names that are whitelisted
+- `app-policy-1` can be edited/deleted
+- `platform-deny-all-egress` cannot be edited/deleted
 ## Limitations
 - Only 1 Egress Firewall resource can be set at one time
 - Network Policies require explicit `Allow`, thus all `Allow` rules in `Egress Firewall` need to be there in `Egress Network Policies`
