@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: agent
+  labels:
+    app: splunk-agent
+    component: security
+    type: infra
+spec:
+  selector:
+    matchLabels:
+      app: splunk-agent
+  template:
+    metadata:
+      labels:
+        app: splunk-agent
+        component: security
+        type: infra
+    spec:
+      containers:
+        - name: splunk
+          envFrom:
+            - secretRef:
+                 name: splunk-config
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          ports:
+            - containerPort: 8089
+              hostPort: 8089
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /var/log
+              name: system-log
+            - name: deploymentclient
+              mountPath: /opt/splunkforwarder-etc/system/local/deploymentclient.conf
+              subPath: deploymentclient.conf
+            - name: splunk-launch
+              mountPath: /opt/splunkforwarder-etc/splunk-launch.conf
+              subPath: splunk-launch.conf
+          image: splunk/universalforwarder:8.0.4
+      serviceAccount: splunk-agent
+      volumes:
+        - name: system-log
+          hostPath:
+            path: /var/log
+        - name: deploymentclient
+          configMap:
+            name: splunk-config
+            items:
+              - key: deploymentclient.conf 
+                path: deploymentclient.conf
+            defaultMode: 420
+        - name: splunk-launch
+          configMap:
+            name: splunk-config
+            items:
+              - key: splunk-launch.conf
+                path: splunk-launch.conf
+            defaultMode: 420        
+              
+    

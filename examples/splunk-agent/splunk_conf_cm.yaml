@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: splunk-config
+data:
+  deploymentclient.conf: |
+    [deployment-client]
+    clientName=rosa-or5k42
+    [target-broker:deploymentServer]
+    targetUri = <DEPLOYMENT_SERVER>:8089
+  splunk-launch.conf: |
+    SPLUNK_HOME=/opt/splunkforwarder
+

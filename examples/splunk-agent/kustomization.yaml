@@ -1,0 +1,7 @@
+resources:
+  - namespace.yaml
+  - splunk_conf_env_secret.yaml
+  - splunk_conf_cm.yaml
+  - splunk_agent_sa.yaml
+  - splunk_agent_ds.yaml
+namespace: splunk-agent
