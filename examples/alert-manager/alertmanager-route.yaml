@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: alertmanager-example
+spec:
+  to:
+    kind: Service
+    name: alertmanager-example
+    weight: 100
+  port:
+    targetPort: web
