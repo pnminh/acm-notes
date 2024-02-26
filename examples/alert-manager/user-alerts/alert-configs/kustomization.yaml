@@ -1,0 +1,5 @@
+resources:
+  - namespace.yaml
+  - custom-alert.yaml
+  #- prometheus-rules.yaml
+namespace: openshift-monitoring

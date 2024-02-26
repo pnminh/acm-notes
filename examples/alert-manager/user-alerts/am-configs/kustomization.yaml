@@ -1,0 +1,5 @@
+resources:
+  #- ./prometheus-rules
+  - alertmanager-cm.yaml
+  - alertmanager-secret.yaml
+namespace: openshift-user-workload-monitoring
