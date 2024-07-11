@@ -13,4 +13,4 @@ spec:
         matchLabels: {}
     - namespaceSelector:
         matchLabels:
-          kubernetes.io/metadata.name: openshift-ingress
+          network.openshift.io/policy-group: ingress

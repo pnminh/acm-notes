@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: quay.io/centos7/httpd-24-centos7
+        image: quay.io/centos7/httpd-24-centos7:centos7
         ports:
         - containerPort: 8080
