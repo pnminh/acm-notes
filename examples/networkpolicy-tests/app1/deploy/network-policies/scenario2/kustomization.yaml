@@ -1,0 +1,2 @@
+resources: 
+  - egress-allow-all.yaml

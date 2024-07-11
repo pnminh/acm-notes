@@ -1,4 +1,0 @@
-resources:
-  - allow-np-creation-clusterrole.yaml
-  - allow-np-creation-rolebinding.yaml
-  - allow-read-access-rolebinding.yaml

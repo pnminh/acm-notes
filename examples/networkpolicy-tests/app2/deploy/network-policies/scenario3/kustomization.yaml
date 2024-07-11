@@ -1,0 +1,3 @@
+resources: 
+  - egress-allow-all.yaml
+  - egress-firewall-allow-domains.yaml

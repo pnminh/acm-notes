@@ -1,0 +1,18 @@
+apiVersion: k8s.ovn.org/v1
+kind: EgressFirewall
+metadata:
+  name: default
+spec:
+  egress:
+  - to:
+      dnsName: amazonaws.com
+    type: Allow
+  - to:
+      dnsName: redhat.com
+    type: Allow
+  - to:
+      dnsName: google.com
+    type: Allow
+  - to: 
+      cidrSelector: 0.0.0.0/0
+    type: Deny
